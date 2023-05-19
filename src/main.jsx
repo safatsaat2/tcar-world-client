@@ -9,6 +9,7 @@ import Main from './Layout/Main';
 import Home from './pages/Home/Home';
 import LogIn from './pages/LogIn/LogIn';
 import SignUp from './pages/SignUp/SignUp';
+import Authprovider from './Providers/Authprovider';
 
 
 const router = createBrowserRouter([
@@ -17,16 +18,16 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path:'/',
-        element:<Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
-        path:'login',
-        element:<LogIn></LogIn>
+        path: 'login',
+        element: <LogIn></LogIn>
       },
       {
-        path:'signup',
-        element:<SignUp></SignUp>
+        path: 'signup',
+        element: <SignUp></SignUp>
       },
     ]
   },
@@ -34,6 +35,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>,
 )

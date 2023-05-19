@@ -1,6 +1,35 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/Authprovider";
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
+
+    const {register, auth} = useContext(AuthContext)
+
+//  funtion for register
+    const handleRegister = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const pass = form.password.value;
+        const photo = form.photo.value;
+
+        register(email, pass)
+        .then(() => {
+            updateProfile(auth.currentUser, {
+                photoURL: photo
+                
+            },
+            console.log(auth.currentUser)
+            )
+            .then(() => {
+                console.log(auth.currentUser)})
+        })
+        .catch(err => console.log(err))
+    }
+
+    
     return (
         <div className="hero min-h-screen ">
             <div className="flex flex-col lg:flex-row w-3/4">
@@ -11,7 +40,7 @@ const SignUp = () => {
                     <h1 className="text-3xl font-bold">Please Register</h1>
                     <div className="card w-full shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <form >
+                            <form onSubmit={handleRegister}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
