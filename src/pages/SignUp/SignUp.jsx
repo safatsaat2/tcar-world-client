@@ -11,6 +11,7 @@ const SignUp = () => {
     const handleRegister = (event) =>{
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value
         const email = form.email.value;
         const pass = form.password.value;
         const photo = form.photo.value;
@@ -18,6 +19,7 @@ const SignUp = () => {
         register(email, pass)
         .then(() => {
             updateProfile(auth.currentUser, {
+                displayName: name,
                 photoURL: photo
                 
             },
@@ -45,7 +47,13 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="text" name="email" placeholder="email" className="input input-bordered" />
+                                    <input type="text" name="name" placeholder="Name" className="input input-bordered" />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
+                                    </label>
+                                    <input type="email" name="email" placeholder="email" className="input input-bordered" />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -57,7 +65,7 @@ const SignUp = () => {
                                     <label className="label">
                                         <span className="label-text">Photo Url</span>
                                     </label>
-                                    <input type="text" name="photo" placeholder="password" className="input input-bordered" />
+                                    <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" />
                                     <label className="label">
                                         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                     </label>

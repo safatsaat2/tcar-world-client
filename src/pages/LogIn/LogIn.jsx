@@ -4,10 +4,10 @@ import { AuthContext } from "../../Providers/Authprovider";
 
 const LogIn = () => {
 
-    const {signIn} = useContext(AuthContext)
+    const {signIn, googleSignIn} = useContext(AuthContext)
 
 
-
+//  Log in Function
     const handleLogIn = (event) =>{
         event.preventDefault()
         const form = event.target
@@ -20,6 +20,18 @@ const LogIn = () => {
         .catch(err => console.log(err))
 
     }
+
+    // Google sign in
+
+    const handleGoogleSignIn =() =>{
+        googleSignIn()
+        .then(()=>{
+            alert('Signed in successfully')
+        })
+        .catch(err => console.log(err))
+    }
+
+
     return (
         <div className="hero min-h-screen ">
             <div className="flex flex-col lg:flex-row w-3/4">
@@ -50,6 +62,8 @@ const LogIn = () => {
                                     <button className="cursor-pointer bg-[#EF8716] p-3 text-white font-semibold rounded-md"><input className="cursor-pointer" type="submit" value="Log in" /></button>
                                 </div>
                             </form>
+                            <p className="text-center">Or</p>
+                            <button onClick={handleGoogleSignIn} className="cursor-pointer bg-[#EF8716] p-3 text-white font-semibold rounded-md">Sign in with Google</button>
                         </div>
                     </div>
                     <p>New to Tcar? <Link to='/signup'>Register</Link></p>
