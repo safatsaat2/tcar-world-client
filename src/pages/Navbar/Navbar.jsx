@@ -4,13 +4,15 @@ import { AuthContext } from "../../Providers/Authprovider";
 
 const Navbar = () => {
 
-    const { user,logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
- const handleLogOut = () => {
-    logOut()
-    .then(() => alert('Log out successfully'))
-    .catch(err => console.log(err))
- }
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => alert('Log out successfully'))
+            .catch(err => console.log(err))
+    }
+
 
     return (
         <div className="navbar bg-base-100 px-2">
@@ -28,31 +30,37 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                {user
-                    ?
-                    <>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Home</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/alltoys'}>All Toys</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={`/mytoys/${user.email}`}>My Toys</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/addatoy'}>Add a Toy</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/blogs'}>Blogs</Link></li>
-                    </>
-                    :
-                    <>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Home</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/alltoys'}>All Toys</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/blogs'}>Blogs</Link></li>
-                    </>}
-                    
-                    
+                    {user
+                        ?
+                        <>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Home</Link></li>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/alltoys'}>All Toys</Link></li>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={`/mytoys/${user.email}`}>My Toys</Link></li>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/addatoy'}>Add a Toy</Link></li>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/blogs'}>Blogs</Link></li>
+                        </>
+                        :
+                        <>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Home</Link></li>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/alltoys'}>All Toys</Link></li>
+                            <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/blogs'}>Blogs</Link></li>
+                        </>}
+
+
                 </ul>
             </div>
             <div className="navbar-end">
                 {user
                     ?
-                    <button onClick={handleLogOut} className="border border-[#EF8716] text-[#EF8716] hover:bg-[#EF8716] px-8 py-2 mx-3 hover:text-white rounded-md cursor-pointer">
-                        Log Out
-                    </button>
+                    <>
+                        <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                            <img src={user.photoURL} className="h-10  w-10 rounded-md" alt="" />
+                        </div>
+                        <button onClick={handleLogOut} className="border border-[#EF8716] text-[#EF8716] hover:bg-[#EF8716] px-2 lg:px-8 py-2 mx-3 hover:text-white rounded-md cursor-pointer">
+                            Log Out
+                        </button>
+                    </>
+
                     :
                     <>
                         <Link to='/login'> <div className="border border-[#EF8716] text-[#EF8716] hover:bg-[#EF8716] px-8 py-2 mx-3 hover:text-white rounded-md cursor-pointer">

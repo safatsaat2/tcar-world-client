@@ -4,7 +4,7 @@ import ShopByCategory from "../ShopByCategory/ShopByCategory";
 
 const Home = () => {
     return (
-        <div>
+        <div className="w-full">
             <Banner></Banner>
             <Gallery></Gallery>
             <ShopByCategory></ShopByCategory>

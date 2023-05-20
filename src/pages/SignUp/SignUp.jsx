@@ -45,7 +45,7 @@ const SignUp = () => {
                             <form onSubmit={handleRegister}>
                                 <div className="form-control">
                                     <label className="label">
-                                        <span className="label-text">Email</span>
+                                        <span className="label-text">Name</span>
                                     </label>
                                     <input type="text" name="name" placeholder="Name" className="input input-bordered" />
                                 </div>
