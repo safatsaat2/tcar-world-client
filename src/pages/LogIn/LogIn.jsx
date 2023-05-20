@@ -1,38 +1,46 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
 
 const LogIn = () => {
 
-    const {signIn, googleSignIn} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
-//  Log in Function
-    const handleLogIn = (event) =>{
+    //  Log in Function
+    const handleLogIn = (event) => {
         event.preventDefault()
         const form = event.target
         const email = form.email.value;
         const pass = form.password.value;
         signIn(email, pass)
-        .then(()=>{
-            alert('Signed in successfully')
-        })
-        .catch(err => console.log(err))
+            .then(() => {
+                navigate(from, { replace: true })
+                alert('Successfully logged in')
+                
+            })
+            .catch(err => console.log(err))
 
     }
 
     // Google sign in
 
-    const handleGoogleSignIn =() =>{
+    const handleGoogleSignIn = () => {
         googleSignIn()
-        .then(()=>{
-            alert('Signed in successfully')
-        })
-        .catch(err => console.log(err))
+            .then(() => {
+                navigate(from, { replace: true })
+                alert('Successfully logged in')
+
+            })
+            .catch(err => console.log(err))
     }
 
 
     return (
+        
         <div className="hero min-h-screen ">
             <div className="flex flex-col lg:flex-row w-3/4">
 
@@ -64,6 +72,7 @@ const LogIn = () => {
                             </form>
                             <p className="text-center">Or</p>
                             <button onClick={handleGoogleSignIn} className="cursor-pointer bg-[#EF8716] p-3 text-white font-semibold rounded-md">Sign in with Google</button>
+                            
                         </div>
                     </div>
                     <p>New to Tcar? <Link to='/signup'>Register</Link></p>
