@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import ToyTabular from "../ToyTabular/ToyTabular";
+import ToyTabularAll from "../ToyTabularAll/ToyTabularAll";
 
 const AllToys = () => {
 
@@ -16,13 +16,12 @@ const AllToys = () => {
                         <th>Sub Category</th>
                         <th>Price</th>
                         <th>Available Quantity</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        <th>View Details</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {datas.map(data => <ToyTabular key={data._id} data={data}></ToyTabular>)}
+                    {datas.map(data => <ToyTabularAll key={data._id} data={data}></ToyTabularAll>)}
 
                 </tbody>
             </table>
