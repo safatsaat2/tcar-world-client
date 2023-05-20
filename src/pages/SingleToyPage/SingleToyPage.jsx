@@ -19,10 +19,6 @@ const SingleToyPage = () => {
                     <p className="text-sm flex items-center">Rating: <FaStar className="mx-2"></FaStar>{rating ? rating : 'Not Added'}</p>
                     <p className="text-sm flex items-center">Quantity: {quantity ? quantity : 'Not Added'}</p>
                     <p className="text-sm flex items-center">Description: {description ? description : 'Not Added'}</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
-                    </div>
                 </div>
             </div>
         </div>

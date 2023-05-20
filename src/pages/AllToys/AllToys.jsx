@@ -4,10 +4,17 @@ import ToyTabularAll from "../ToyTabularAll/ToyTabularAll";
 const AllToys = () => {
 
     const datas = useLoaderData()
+    const sortData = datas
+    const high = () => {
+        return datas.sort(function(a, b){return a.price - b.price})
+        
+    }
+    
     console.log(datas)
 
     return (
         <div className="overflow-x-auto">
+            <button onClick={high} className="btn bg-[#EF8716]">higher to lower</button>
             <table className="table table-compact w-full">
                 <thead>
                     <tr>
@@ -21,7 +28,7 @@ const AllToys = () => {
                 </thead>
                 <tbody>
 
-                    {datas.map(data => <ToyTabularAll key={data._id} data={data}></ToyTabularAll>)}
+                    {sortData.map(data => <ToyTabularAll key={data._id} data={data}></ToyTabularAll>)}
 
                 </tbody>
             </table>
