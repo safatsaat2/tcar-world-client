@@ -14,6 +14,7 @@ import Blogs from './pages/Blogs/Blogs';
 import AllToys from './pages/AllToys/AllToys';
 import AddAToy from './pages/AddAToy/AddAToy';
 import PrivateRoutes from './pages/PrivateRoutes/PrivateRoutes';
+import MyToys from './pages/MyToys/MyToys';
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         path: 'addatoy',
         element: <PrivateRoutes><AddAToy></AddAToy></PrivateRoutes>
+      },
+      {
+        path:'mytoys/:email',
+        element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>,
+        loader: ({params}) => fetch(`http://localhost:5000/category-data/${params.email}`)
       }
     ]
   },
