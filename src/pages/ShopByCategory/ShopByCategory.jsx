@@ -36,7 +36,7 @@ const ShopByCategory = () => {
                 </TabList>
 
                 <TabPanel>
-                    <div className='grid grid-cols-1 lg:grid-cols-2'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                         {filteredData.map(d => <ShopByCategoryCard key={d._id} data={d}></ShopByCategoryCard>)}
                     </div>
                 </TabPanel>

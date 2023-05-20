@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       },
       {
         path:'singletoypage/:id',
-        element: <SingleToyPage></SingleToyPage>,
+        element: <PrivateRoutes><SingleToyPage></SingleToyPage></PrivateRoutes>,
         loader: ({params}) => fetch( `http://localhost:5000/categoryData/${params.id}`)
       }
     ]

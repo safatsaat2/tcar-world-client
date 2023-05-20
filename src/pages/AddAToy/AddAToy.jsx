@@ -19,6 +19,7 @@ const AddAToy = () => {
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const category = form.select.value;
+        const description = form.description.value;
         console.log(picture)
         const toy = {
             picture,
@@ -28,7 +29,8 @@ const AddAToy = () => {
             price,
             rating,
             quantity,
-            category
+            category,
+            description
         }
         fetch('http://localhost:5000/category-data', {
             method: "POST",
