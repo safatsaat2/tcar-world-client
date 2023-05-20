@@ -33,13 +33,15 @@ const Navbar = () => {
                     <>
                     <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Home</Link></li>
                     <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>All Toys</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>My Toys</Link></li>
+                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/alltoys'}>My Toys</Link></li>
                     <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Add a Toy</Link></li>
+                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/blogs'}>Blogs</Link></li>
                     </>
                     :
                     <>
                     <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>Home</Link></li>
-                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/'}>All Toys</Link></li>
+                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/alltoys'}>All Toys</Link></li>
+                    <li className="mx-2 text-[#EF8716] hover:font-bold hover:text-[#BF6C12]"><Link to={'/blogs'}>Blogs</Link></li>
                     </>}
                     
                     

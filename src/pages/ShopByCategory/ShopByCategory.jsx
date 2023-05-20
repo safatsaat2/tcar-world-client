@@ -28,8 +28,8 @@ const ShopByCategory = () => {
     return (
         <div className='w-2/3 my-20 mx-auto'>
             <h1 className='text-4xl text-center font-bold my-10 text-[#E03C79]'>Shop by Category</h1>
-            <Tabs defaultIndex={1} onSelect={(index) => index === 0 ? setCat('sports car') : index === 1 ? setCat('truck') : setCat('suv')}>
-                <TabList>
+            <Tabs  defaultIndex={1} onSelect={(index) => index === 0 ? setCat('sports car') : index === 1 ? setCat('truck') : setCat('suv')}>
+                <TabList >
                     <Tab > Sports Car</Tab>
                     <Tab >Truck</Tab>
                     <Tab >SUV</Tab>
