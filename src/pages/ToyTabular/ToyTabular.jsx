@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const ToyTabular = ({data, handleDelete}) => {
 
@@ -12,7 +13,7 @@ const ToyTabular = ({data, handleDelete}) => {
             <td>{category}</td>
             <td>${price}</td>
             <td>{quantity ? quantity : 'Not Added'}</td>
-            <td><button >Update</button></td>
+            <td><Link to={`/singletoypageupdate/${_id}`}><button >Update</button></Link></td>
             <td><button onClick={() => handleDelete(_id)}>Delete</button></td>
         </tr>
     );

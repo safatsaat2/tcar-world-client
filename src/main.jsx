@@ -16,6 +16,7 @@ import AddAToy from './pages/AddAToy/AddAToy';
 import PrivateRoutes from './pages/PrivateRoutes/PrivateRoutes';
 import MyToys from './pages/MyToys/MyToys';
 import SingleToyPage from './pages/SingleToyPage/SingleToyPage';
+import SingleToyPageUpdate from './pages/SingleToyPageUpdate/SingleToyPageUpdate';
 
 
 const router = createBrowserRouter([
@@ -57,7 +58,13 @@ const router = createBrowserRouter([
         path:'singletoypage/:id',
         element: <PrivateRoutes><SingleToyPage></SingleToyPage></PrivateRoutes>,
         loader: ({params}) => fetch( `http://localhost:5000/categoryData/${params.id}`)
+      },
+      {
+        path:'singletoypageupdate/:id',
+        element: <PrivateRoutes><SingleToyPageUpdate></SingleToyPageUpdate></PrivateRoutes>,
+        loader: ({params}) => fetch( `http://localhost:5000/categoryData/${params.id}`)
       }
+
     ]
   },
 ]);
