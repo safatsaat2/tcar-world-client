@@ -61,7 +61,7 @@ const LogIn = () => {
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="text" name="password" placeholder="Password" className="input input-bordered" />
+                                    <input type="password" name="password" placeholder="Password" className="input input-bordered" />
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="cursor-pointer bg-[#EF8716] p-3 text-white font-semibold rounded-md"><input className="cursor-pointer" type="submit" value="Log in" /></button>
