@@ -9,7 +9,7 @@ const MyToys = () => {
     const [datas, setDatas] = useState([])
     const {user} = useContext(AuthContext)
     useEffect(()=>{
-        fetch(`http://localhost:5000/category-data/${user?.email}`)
+        fetch(`https://tcar-world-server.vercel.app/category-data/${user?.email}`)
         .then(res => res.json())
         .then(data => setDatas(data))
     },[user])
@@ -17,7 +17,7 @@ const MyToys = () => {
     const handleDelete = id => {
         const proceed = confirm('Are you sure you want to delete?')
         if(proceed){
-            fetch(`http://localhost:5000/category-data/${id}`,
+            fetch(`https://tcar-world-server.vercel.app/category-data/${id}`,
             {method:"DELETE"})
             .then(res => res.json())
             .then(data => {console.log(data)

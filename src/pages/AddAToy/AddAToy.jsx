@@ -32,7 +32,7 @@ const AddAToy = () => {
             category,
             description
         }
-        fetch('http://localhost:5000/category-data', {
+        fetch('https://tcar-world-server.vercel.app/category-data', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

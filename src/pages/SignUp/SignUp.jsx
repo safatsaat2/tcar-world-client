@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
 import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
-
+    const [error, setError] = useState('')
     const {register, auth} = useContext(AuthContext)
 
 //  funtion for register
@@ -28,7 +28,7 @@ const SignUp = () => {
             .then(() => {
                 console.log(auth.currentUser)})
         })
-        .catch(err => console.log(err))
+        .catch(err => setError(err.message))
     }
 
     
@@ -70,6 +70,7 @@ const SignUp = () => {
                                 <div className="form-control mt-6">
                                     <button className="cursor-pointer bg-[#EF8716] p-3 text-white font-semibold rounded-md"><input className="cursor-pointer" type="submit" value="Register" /></button>
                                 </div>
+                                <p>{error}</p>
                             </form>
                         </div>
                     </div>

@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/Authprovider";
 
 const LogIn = () => {
+
+    const [error, setError] = useState('')
 
     const navigate = useNavigate();
     const { signIn, googleSignIn } = useContext(AuthContext);
@@ -22,7 +24,7 @@ const LogIn = () => {
                 alert('Successfully logged in')
                 
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err.message))
 
     }
 
@@ -35,8 +37,9 @@ const LogIn = () => {
                 alert('Successfully logged in')
 
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err.message))
     }
+    console.log(error)
 
 
     return (
@@ -69,7 +72,7 @@ const LogIn = () => {
                             </form>
                             <p className="text-center">Or</p>
                             <button onClick={handleGoogleSignIn} className="cursor-pointer bg-[#EF8716] p-3 text-white font-semibold rounded-md">Sign in with Google</button>
-                            
+                            <p className="text-warning">{error}</p>
                         </div>
                     </div>
                     <p>New to Tcar? <Link to='/signup'>Register</Link></p>

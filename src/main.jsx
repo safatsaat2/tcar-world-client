@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       {
         path: 'alltoys',
         element: <AllToys></AllToys>,
-        loader:() => fetch('http://localhost:5000/category-data')
+        loader:() => fetch('https://tcar-world-server.vercel.app/category-data')
       },
       {
         path: 'addatoy',
@@ -53,17 +53,17 @@ const router = createBrowserRouter([
       {
         path:'mytoys',
         element: <PrivateRoutes><MyToys></MyToys></PrivateRoutes>,
-        // loader: ({params}) => fetch(`http://localhost:5000/category-data/${params.email}`)
+        // loader: ({params}) => fetch(`https://tcar-world-server.vercel.app/category-data/${params.email}`)
       },
       {
         path:'singletoypage/:id',
         element: <PrivateRoutes><SingleToyPage></SingleToyPage></PrivateRoutes>,
-        loader: ({params}) => fetch( `http://localhost:5000/categoryData/${params.id}`)
+        loader: ({params}) => fetch( `https://tcar-world-server.vercel.app/categoryData/${params.id}`)
       },
       {
         path:'singletoypageupdate/:id',
         element: <PrivateRoutes><SingleToyPageUpdate></SingleToyPageUpdate></PrivateRoutes>,
-        loader: ({params}) => fetch( `http://localhost:5000/categoryData/${params.id}`)
+        loader: ({params}) => fetch( `https://tcar-world-server.vercel.app/categoryData/${params.id}`)
       }
 
     ]

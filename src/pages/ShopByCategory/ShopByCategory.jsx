@@ -11,7 +11,7 @@ const ShopByCategory = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/category-data', {
+        fetch('https://tcar-world-server.vercel.app/category-data', {
             method: "GET",
             headers: {
                 "content-type": "application/json"

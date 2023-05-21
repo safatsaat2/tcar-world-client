@@ -18,7 +18,7 @@ const SingleToyPageUpdate = () => {
             quantity,
             description
         }
-        fetch(`http://localhost:5000/category-data/${_id}`, {
+        fetch(`https://tcar-world-server.vercel.app/category-data/${_id}`, {
             method: "PATCH",
             headers:{
                 'content-type': "application/json"
