@@ -6,11 +6,7 @@ const AllToys = () => {
     const datas = useLoaderData()
     const sortData = datas
 
-   datas.sort(function(a, b){return a.price - b.price})
-        
-
     
-
     return (
         <div className="overflow-x-auto">
             <table className="table table-compact w-full">
