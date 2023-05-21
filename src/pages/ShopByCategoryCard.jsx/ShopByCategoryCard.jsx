@@ -1,10 +1,11 @@
 
 import {  FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 
 const ShopByCategoryCard = ({data}) => {
-    const {picture, name, price, rating} = data
+    const {picture, name, price, rating, _id} = data
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -15,7 +16,7 @@ const ShopByCategoryCard = ({data}) => {
                 <p className='font-semibold'>Price: ${price}</p>
                 <p className='flex justify-center items-center font-semibold'> <FaStar className='mx-2 text-[#EF8716]' /> {rating}</p>
                 <div className="card-actions">
-                    <button className="btn bg-[#EF8716]">View Details</button>
+                    <Link to={`/singletoypage/${_id}`}><button className="btn bg-[#EF8716]">View Details</button></Link>
                 </div>
             </div>
         </div>
