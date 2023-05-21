@@ -17,6 +17,7 @@ import PrivateRoutes from './pages/PrivateRoutes/PrivateRoutes';
 import MyToys from './pages/MyToys/MyToys';
 import SingleToyPage from './pages/SingleToyPage/SingleToyPage';
 import SingleToyPageUpdate from './pages/SingleToyPageUpdate/SingleToyPageUpdate';
+import NotFound from './pages/Not Found/NotFound';
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
 
     ]
   },
+  {
+    path: '*',
+    element:<NotFound></NotFound>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
