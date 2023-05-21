@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/Authprovider";
 const Footer = () => {
     const { user } = useContext(AuthContext)
     return (
-        <footer className="footer bg-slate-200 p-20">
+        <footer className="footer bg-slate-200 pl-10 py-10 ">
             <img src="https://i.ibb.co/55cf1LG/Group-1.png" alt="" />
             <div className="grid grid-flow-col gap-x-4">
                 <ul className="menu">

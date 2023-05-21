@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const ShopByCategoryCard = ({data}) => {
     const {picture, name, price, rating, _id} = data
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-full bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={picture}  className="rounded-xl object-cover w-full h-48" />
             </figure>
