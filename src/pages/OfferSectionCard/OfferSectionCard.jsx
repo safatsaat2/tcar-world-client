@@ -8,7 +8,8 @@ const OfferSectionCard = ({ data }) => {
 
     return (
         <div>
-            <div className="carousel-item">
+            <div data-aos="zoom-in" data-aos-delay="50"
+                data-aos-duration="1200" className="carousel-item">
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <figure className="px-10 pt-10">
                         <img src={picture} className="rounded-xl object-cover w-full h-48" />

@@ -22,7 +22,7 @@ const OfferSection = () => {
     return (
         <div className='my-20 mx-auto'>
             <h1 className='text-4xl text-center justify-center font-bold flex text-[#E03C79] items-center '>Our Special! <FaFire className='text-[#EF8716]'></FaFire></h1>
-            <div className="carousel carousel-center gap-4 carousel-item rounded-box">
+            <div  className="carousel carousel-center gap-4 carousel-item rounded-box">
                 {data.map(d => <OfferSectionCard key={d._id} data={d}></OfferSectionCard>)}
 
             </div>
